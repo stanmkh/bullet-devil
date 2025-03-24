@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0bhydw4f33sh"]
+
+[ext_resource type="Script" uid="uid://gxtiifp6vrqg" path="res://utility/components/autodestruction_component.gd" id="1_7vf0a"]
+
+[node name="DestructionComponent" type="Node"]
+script = ExtResource("1_7vf0a")
+delay = 3.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="handle_destruction"]

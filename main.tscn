@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqgr6evhb2cmd"]
+
+[ext_resource type="PackedScene" uid="uid://b7itul1y1bbs5" path="res://entities/player/player.tscn" id="1_qfud5"]
+[ext_resource type="Texture2D" uid="uid://qe8anukkon42" path="res://test_graphic/side_bg.png" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://b406g8vi5jnr" path="res://test_graphic/bg.png" id="2_gutq3"]
+[ext_resource type="PackedScene" uid="uid://bfau605u4rue" path="res://entities/spawners/rain_spawner.tscn" id="4_0wxit"]
+[ext_resource type="Script" uid="uid://b6xa3jj70c315" path="res://projectile_container.gd" id="5_2bgd2"]
+[ext_resource type="PackedScene" uid="uid://c1nkailep0ldh" path="res://entities/world/world_bounderies.tscn" id="5_lquwl"]
+
+[sub_resource type="Environment" id="Environment_ovg3n"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_gutq3")
+
+[node name="Side-bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_7mycd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ovg3n")
+
+[node name="Player" parent="WorldEnvironment" instance=ExtResource("1_qfud5")]
+position = Vector2(0, 400)
+
+[node name="ProjectileContainer" type="Node" parent="WorldEnvironment"]
+script = ExtResource("5_2bgd2")
+
+[node name="RainSpawner" parent="WorldEnvironment" instance=ExtResource("4_0wxit")]
+position = Vector2(-600, -600)
+
+[node name="WorldBounderies" parent="WorldEnvironment" instance=ExtResource("5_lquwl")]
+
+[connection signal="projectile_fired" from="WorldEnvironment/Player" to="WorldEnvironment/ProjectileContainer" method="_on_player_projectile_fired"]

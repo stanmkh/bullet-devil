@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7itul1y1bbs5"]
+
+[ext_resource type="Texture2D" uid="uid://dmex24ux0odqs" path="res://test_graphic/player.svg" id="1_s6lh7"]
+[ext_resource type="Script" uid="uid://bo5jdqjfxre48" path="res://entities/player/player.gd" id="1_tpc72"]
+[ext_resource type="PackedScene" uid="uid://ct52avlpmp3sw" path="res://utility/components/range_attack_component.tscn" id="3_kcra0"]
+[ext_resource type="PackedScene" uid="uid://bkw2vkkb6v2tl" path="res://entities/projectiles/player_projectile.tscn" id="4_1f5b0"]
+[ext_resource type="PackedScene" uid="uid://drhm2maagay2l" path="res://utility/components/health_component.tscn" id="5_fkugw"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("fire_controller", "health_component") groups=["damagable"]]
+collision_layer = 4
+collision_mask = 106
+script = ExtResource("1_tpc72")
+fire_controller = NodePath("RangeAttackComponent")
+health_component = NodePath("HealthComponent")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_s6lh7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-250, 125, 250, 125, 0, -125)
+
+[node name="RangeAttackComponent" parent="." node_paths=PackedStringArray("projectile_spawn_location") instance=ExtResource("3_kcra0")]
+projectile_to_fire = ExtResource("4_1f5b0")
+projectile_spawn_location = NodePath("SpawnLocation")
+
+[node name="SpawnLocation" type="Node2D" parent="RangeAttackComponent"]
+position = Vector2(0, -27)
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_fkugw")]
+
+[connection signal="projectile_fired" from="RangeAttackComponent" to="." method="_on_fire_controller_projectile_fired"]

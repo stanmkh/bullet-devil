@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkw2vkkb6v2tl"]
+
+[ext_resource type="PackedScene" uid="uid://volb756nuwjh" path="res://utility/entities/projectile.tscn" id="1_r71hq"]
+
+[node name="PlayerProjectile" instance=ExtResource("1_r71hq")]
+collision_layer = 16
+collision_mask = 42

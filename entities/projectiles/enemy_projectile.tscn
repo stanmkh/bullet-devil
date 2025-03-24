@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://telwkr4bkune"]
+
+[ext_resource type="PackedScene" uid="uid://volb756nuwjh" path="res://utility/entities/projectile.tscn" id="1_etjju"]
+[ext_resource type="Texture2D" uid="uid://co5td3vigb1wd" path="res://test_graphic/bullet_red.svg" id="2_10qwb"]
+
+[node name="EnemyProjectile" instance=ExtResource("1_etjju")]
+collision_layer = 32
+collision_mask = 22
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_10qwb")

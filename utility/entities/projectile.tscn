@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://volb756nuwjh"]
+
+[ext_resource type="Script" uid="uid://c8h84kwx5pjlc" path="res://utility/entities/projectile.gd" id="1_ldsuo"]
+[ext_resource type="Texture2D" uid="uid://bnivb65mmna6t" path="res://test_graphic/bullet_blue.svg" id="2_fwlw6"]
+[ext_resource type="PackedScene" uid="uid://d0bhydw4f33sh" path="res://utility/components/autodestruction_component.tscn" id="3_pkps2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idag2"]
+radius = 14.35
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_ldsuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("2_fwlw6")
+
+[node name="AutodestructionComponent" parent="." instance=ExtResource("3_pkps2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.375, 0.375)
+shape = SubResource("CircleShape2D_idag2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

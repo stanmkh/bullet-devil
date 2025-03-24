@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://qvkl1v8tjdhs"]
+
+[ext_resource type="Script" uid="uid://dodukubc2kg5u" path="res://entities/enemies/enemy.gd" id="1_4xsxa"]
+[ext_resource type="Texture2D" uid="uid://dy65xggim4xjo" path="res://test_graphic/enemy.svg" id="2_pv5y5"]
+[ext_resource type="PackedScene" uid="uid://d0bhydw4f33sh" path="res://utility/components/autodestruction_component.tscn" id="3_8occs"]
+[ext_resource type="PackedScene" uid="uid://drhm2maagay2l" path="res://utility/components/health_component.tscn" id="4_msovg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn16b"]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("health_component") groups=["damagable"]]
+collision_layer = 8
+collision_mask = 22
+script = ExtResource("1_4xsxa")
+health_component = NodePath("HealthComponent")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pv5y5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+scale = Vector2(1.775, 1.775)
+shape = SubResource("RectangleShape2D_jn16b")
+
+[node name="AutodestructionComponent" parent="." instance=ExtResource("3_8occs")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_msovg")]
