@@ -6,6 +6,8 @@ extends Node
 @export var amount: float = 100
 var parent
 
+signal died
+
 func _ready() -> void:
     parent = get_parent()
 
@@ -26,3 +28,5 @@ func is_dead() -> bool:
 
 func take_damage(damage: float):
     amount -= damage
+    if is_dead():
+        died.emit()

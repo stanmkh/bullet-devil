@@ -6,13 +6,12 @@ extends CharacterBody2D
 @export var health_component: HealthComponent
 
 signal projectile_fired
+signal died
 
 func _process(_delta: float) -> void:
 	if (Input.is_action_pressed("attack")):
 		# print(fire_controller)
 		fire_controller.try_fire()
-	if health_component.is_dead():
-		get_tree().quit()  # TODO: Implement game over instead
 
 func _physics_process(_delta: float) -> void:
 
@@ -31,9 +30,11 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-
 func _on_fire_controller_projectile_fired(target: Node2D) -> void:
 	projectile_fired.emit(target)
 	
 func take_damage(damage: float):
 	health_component.take_damage(damage)
+
+func _on_health_component_died() -> void:
+	died.emit()
