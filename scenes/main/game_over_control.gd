@@ -1,4 +1,3 @@
-# TODO: move to a proper location
 extends Control
 
 
