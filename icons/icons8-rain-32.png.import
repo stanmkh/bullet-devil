@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4d0kq428vwej"
-path="res://.godot/imported/icons8-human-32.png-3e14f15f4d41581c6e2c092b26f26d5d.ctex"
+uid="uid://dm68wmgu6vmsj"
+path="res://.godot/imported/icons8-rain-32.png-07f9afd598111d515b4d86b9bea4822d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_graphic/icons/icons8-human-32.png"
-dest_files=["res://.godot/imported/icons8-human-32.png-3e14f15f4d41581c6e2c092b26f26d5d.ctex"]
+source_file="res://icons/icons8-rain-32.png"
+dest_files=["res://.godot/imported/icons8-rain-32.png-07f9afd598111d515b4d86b9bea4822d.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-@icon("res://test_graphic/icons/icons8-rain-32.png")
+@icon("res://icons/icons8-rain-32.png")
 @tool
 extends Node2D
 

@@ -1,4 +1,4 @@
-@icon("res://test_graphic/icons/icons8-sword-32.png")
+@icon("res://icons/icons8-sword-32.png")
 extends Node2D
 
 @export var fire_rate = 100.0

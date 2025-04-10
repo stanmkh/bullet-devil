@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx4cvb7bx3t5n"
-path="res://.godot/imported/icons8-medical-cross-32.png-c7b4d77c3645d2311975d3effadcb71a.ctex"
+uid="uid://d4d0kq428vwej"
+path="res://.godot/imported/icons8-human-32.png-74a41417fab4a1700ee1af6476c75d18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_graphic/icons/icons8-medical-cross-32.png"
-dest_files=["res://.godot/imported/icons8-medical-cross-32.png-c7b4d77c3645d2311975d3effadcb71a.ctex"]
+source_file="res://icons/icons8-human-32.png"
+dest_files=["res://.godot/imported/icons8-human-32.png-74a41417fab4a1700ee1af6476c75d18.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgfofagfckg7e"
-path="res://.godot/imported/icons8-missile-32.png-63e5f3eba832086cace2296cb349cd5c.ctex"
+uid="uid://dx4cvb7bx3t5n"
+path="res://.godot/imported/icons8-medical-cross-32.png-ea4b3bfd3d20ad8419081d2605dc2fb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_graphic/icons/icons8-missile-32.png"
-dest_files=["res://.godot/imported/icons8-missile-32.png-63e5f3eba832086cace2296cb349cd5c.ctex"]
+source_file="res://icons/icons8-medical-cross-32.png"
+dest_files=["res://.godot/imported/icons8-medical-cross-32.png-ea4b3bfd3d20ad8419081d2605dc2fb4.ctex"]
 
 [params]
 

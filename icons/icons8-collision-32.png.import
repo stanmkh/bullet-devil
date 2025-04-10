@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm68wmgu6vmsj"
-path="res://.godot/imported/icons8-rain-32.png-96e3a2d856f6c0c2e22d877d9bebd24a.ctex"
+uid="uid://dk02gr07bs6s2"
+path="res://.godot/imported/icons8-collision-32.png-ef467de29f1cf504bad3944e860dff3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_graphic/icons/icons8-rain-32.png"
-dest_files=["res://.godot/imported/icons8-rain-32.png-96e3a2d856f6c0c2e22d877d9bebd24a.ctex"]
+source_file="res://icons/icons8-collision-32.png"
+dest_files=["res://.godot/imported/icons8-collision-32.png-ef467de29f1cf504bad3944e860dff3c.ctex"]
 
 [params]
 

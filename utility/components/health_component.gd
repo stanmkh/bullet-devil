@@ -1,5 +1,5 @@
 @tool
-@icon("res://test_graphic/icons/icons8-medical-cross-32.png")
+@icon("res://icons/icons8-medical-cross-32.png")
 class_name HealthComponent
 extends Node
 

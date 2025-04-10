@@ -1,4 +1,4 @@
-@icon("res://test_graphic/icons/icons8-missile-32.png")
+@icon("res://icons/icons8-missile-32.png")
 extends Area2D
 
 @export var speed = -500.0

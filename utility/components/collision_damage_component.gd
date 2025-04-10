@@ -1,5 +1,5 @@
 @tool
-@icon("res://test_graphic/icons/icons8-collision-32.png")
+@icon("res://icons/icons8-collision-32.png")
 extends Node
 
 @export var collision_damage_factory: DamageFactory

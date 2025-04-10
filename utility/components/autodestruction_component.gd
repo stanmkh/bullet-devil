@@ -1,4 +1,4 @@
-@icon("res://test_graphic/icons/icons8-cross-32.png")
+@icon("res://icons/icons8-cross-32.png")
 extends Node
 
 @export var delay = 3000.0

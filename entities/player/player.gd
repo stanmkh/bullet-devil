@@ -1,4 +1,4 @@
-@icon("res://test_graphic/icons/icons8-human-32.png")
+@icon("res://icons/icons8-human-32.png")
 extends CharacterBody2D
 
 @export var speed = 500.0
