@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://qe8anukkon42" path="res://test_graphic/side_bg.png" id="2_7mycd"]
 [ext_resource type="Texture2D" uid="uid://b406g8vi5jnr" path="res://test_graphic/bg.png" id="2_gutq3"]
 [ext_resource type="PackedScene" uid="uid://bfau605u4rue" path="res://entities/spawners/rain_spawner.tscn" id="4_0wxit"]
-[ext_resource type="Script" uid="uid://b6xa3jj70c315" path="res://projectile_container.gd" id="5_2bgd2"]
+[ext_resource type="Script" uid="uid://b6xa3jj70c315" path="res://scenes/main/projectile_container.gd" id="5_2bgd2"]
 [ext_resource type="PackedScene" uid="uid://c1nkailep0ldh" path="res://entities/world/world_bounderies.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://bitd7mprejho4" path="res://game_over_control.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://bitd7mprejho4" path="res://scenes/main/game_over_control.gd" id="7_272bh"]
 
 [sub_resource type="Environment" id="Environment_ovg3n"]
 
