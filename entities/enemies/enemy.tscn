@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://qvkl1v8tjdhs"]
+[gd_scene load_steps=8 format=3 uid="uid://qvkl1v8tjdhs"]
 
 [ext_resource type="Script" uid="uid://dodukubc2kg5u" path="res://entities/enemies/enemy.gd" id="1_4xsxa"]
 [ext_resource type="Texture2D" uid="uid://dy65xggim4xjo" path="res://test_graphic/enemy.svg" id="2_pv5y5"]
+[ext_resource type="Script" uid="uid://cymnxrufahiv5" path="res://utility/damage_factory.gd" id="2_twyc1"]
 [ext_resource type="PackedScene" uid="uid://d0bhydw4f33sh" path="res://utility/components/autodestruction_component.tscn" id="3_8occs"]
 [ext_resource type="PackedScene" uid="uid://drhm2maagay2l" path="res://utility/components/health_component.tscn" id="4_msovg"]
+
+[sub_resource type="Resource" id="Resource_w4yt1"]
+script = ExtResource("2_twyc1")
+amount = 100.0
+metadata/_custom_type_script = "uid://cymnxrufahiv5"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn16b"]
 
@@ -12,6 +18,7 @@ collision_layer = 8
 collision_mask = 22
 script = ExtResource("1_4xsxa")
 health_component = NodePath("HealthComponent")
+collision_damage_factory = SubResource("Resource_w4yt1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://volb756nuwjh"]
+[gd_scene load_steps=7 format=3 uid="uid://volb756nuwjh"]
 
 [ext_resource type="Script" uid="uid://c8h84kwx5pjlc" path="res://utility/entities/projectile.gd" id="1_ldsuo"]
+[ext_resource type="Script" uid="uid://cymnxrufahiv5" path="res://utility/damage_factory.gd" id="2_ch58n"]
 [ext_resource type="Texture2D" uid="uid://bnivb65mmna6t" path="res://test_graphic/bullet_blue.svg" id="2_fwlw6"]
 [ext_resource type="PackedScene" uid="uid://d0bhydw4f33sh" path="res://utility/components/autodestruction_component.tscn" id="3_pkps2"]
+
+[sub_resource type="Resource" id="Resource_cxoqr"]
+script = ExtResource("2_ch58n")
+amount = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idag2"]
 radius = 14.35
 
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_ldsuo")
+damage_factory = SubResource("Resource_cxoqr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.21, 0.21)

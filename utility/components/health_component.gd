@@ -9,24 +9,24 @@ var parent
 signal died
 
 func _ready() -> void:
-    parent = get_parent()
+	parent = get_parent()
 
 func _get_configuration_warnings() -> PackedStringArray:
-    var warnings:PackedStringArray = []
-    if not get_parent().has_method("take_damage"):
-        warnings.append("Parent of Health should implement method take_damage, this method should forward call to Health.take_damage")
-    if not get_parent().is_in_group("damagable"):
-        warnings.append("Parent of Health should be in group 'damagable'")
-    return warnings
+	var warnings:PackedStringArray = []
+	if not get_parent().has_method("take_damage"):
+		warnings.append("Parent of Health should implement method take_damage, this method should forward call to Health.take_damage")
+	if not get_parent().is_in_group("damagable"):
+		warnings.append("Parent of Health should be in group 'damagable'")
+	return warnings
 
 func _process(_delta: float) -> void:
-    if is_dead():
-        parent.queue_free()
+	if is_dead():
+		parent.queue_free()
 
 func is_dead() -> bool:
-    return amount <= 0
+	return amount <= 0
 
-func take_damage(damage: float):
-    amount -= damage
-    if is_dead():
-        died.emit()
+func take_damage(damage: Damage):
+	amount -= damage.amount
+	if is_dead():
+		died.emit()

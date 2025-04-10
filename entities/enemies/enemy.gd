@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var speed = 500.0
 @export var health_component: HealthComponent
+@export var collision_damage_factory: DamageFactory
 
 func _ready() -> void:
 	velocity.y = speed
@@ -14,9 +15,9 @@ func _physics_process(_delta: float) -> void:
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider.is_in_group("damagable"):
-			collider.take_damage(9999)  # TODO: provide proper value
+			collider.take_damage(collision_damage_factory.produce())
 			queue_free()
 
-func take_damage(damage: float):
+func take_damage(damage: Damage):
 	health_component.take_damage(damage)
 	

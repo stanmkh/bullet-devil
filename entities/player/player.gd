@@ -33,7 +33,7 @@ func _physics_process(_delta: float) -> void:
 func _on_fire_controller_projectile_fired(target: Node2D) -> void:
 	projectile_fired.emit(target)
 	
-func take_damage(damage: float):
+func take_damage(damage: Damage):
 	health_component.take_damage(damage)
 
 func _on_health_component_died() -> void:
