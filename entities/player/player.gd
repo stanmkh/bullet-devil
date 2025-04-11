@@ -44,5 +44,6 @@ func try_fire():
 
 func fire():
 	var projectile: Node2D = projectile_to_fire.instantiate()
+	projectile.rotation = rotation
 	projectile.global_position = projectile_spawn_location.global_position
 	projectile_fired.emit(projectile)

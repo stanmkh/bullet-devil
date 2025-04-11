@@ -30,12 +30,14 @@ environment = SubResource("Environment_ovg3n")
 
 [node name="Player" parent="WorldEnvironment" instance=ExtResource("1_qfud5")]
 position = Vector2(0, 400)
+rotation = -1.5708
 
 [node name="ProjectileContainer" type="Node" parent="WorldEnvironment"]
 script = ExtResource("5_2bgd2")
 
-[node name="RainSpawner" parent="WorldEnvironment" instance=ExtResource("4_0wxit")]
+[node name="RainSpawner" parent="WorldEnvironment" node_paths=PackedStringArray("projectile_container") instance=ExtResource("4_0wxit")]
 position = Vector2(-600, -600)
+projectile_container = NodePath("../ProjectileContainer")
 
 [node name="WorldBounderies" parent="WorldEnvironment" instance=ExtResource("5_lquwl")]
 

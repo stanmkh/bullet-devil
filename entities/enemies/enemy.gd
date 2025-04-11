@@ -5,8 +5,11 @@ extends CharacterBody2D
 @export var health_component: HealthComponent
 @export var collision_damage_factory: DamageFactory
 
+@warning_ignore("UNUSED_SIGNAL")
+signal projectile_fired
+
 func _ready() -> void:
-	velocity.y = speed
+	velocity = Vector2.RIGHT.rotated(rotation) * speed
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()

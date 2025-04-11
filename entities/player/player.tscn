@@ -14,16 +14,18 @@ projectile_to_fire = ExtResource("4_1f5b0")
 projectile_spawn_location = NodePath("ProjectileSpawnLocation")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_s6lh7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 polygon = PackedVector2Array(-250, 125, 250, 125, 0, -125)
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_fkugw")]
 
 [node name="ProjectileSpawnLocation" type="Node2D" parent="."]
-position = Vector2(0, -27)
+position = Vector2(26, 0)
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

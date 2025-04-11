@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qvkl1v8tjdhs"]
+[gd_scene load_steps=11 format=3 uid="uid://qvkl1v8tjdhs"]
 
 [ext_resource type="Script" uid="uid://dodukubc2kg5u" path="res://entities/enemies/enemy.gd" id="1_4xsxa"]
 [ext_resource type="Texture2D" uid="uid://dy65xggim4xjo" path="res://test_graphic/enemy.svg" id="2_pv5y5"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d0bhydw4f33sh" path="res://utility/components/autodestruction_component.tscn" id="3_8occs"]
 [ext_resource type="PackedScene" uid="uid://drhm2maagay2l" path="res://utility/components/health_component.tscn" id="4_msovg"]
 [ext_resource type="PackedScene" uid="uid://cu5iw3y8dbgsj" path="res://utility/components/collision_damage_component.tscn" id="6_w4yt1"]
+[ext_resource type="PackedScene" uid="uid://ct52avlpmp3sw" path="res://utility/components/range_attack_component.tscn" id="7_gj3y3"]
+[ext_resource type="PackedScene" uid="uid://telwkr4bkune" path="res://entities/projectiles/enemy_projectile.tscn" id="8_56i32"]
 
 [sub_resource type="Resource" id="Resource_w4yt1"]
 script = ExtResource("2_twyc1")
@@ -18,10 +20,16 @@ metadata/_custom_type_script = "uid://cymnxrufahiv5"
 collision_layer = 8
 collision_mask = 22
 script = ExtResource("1_4xsxa")
+speed = 300.0
 health_component = NodePath("HealthComponent")
 collision_damage_factory = SubResource("Resource_w4yt1")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pv5y5")
+
+[node name="Sprite" type="Sprite2D" parent="Sprite"]
+position = Vector2(130, -1.52588e-05)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_pv5y5")
 
@@ -31,7 +39,15 @@ scale = Vector2(1.775, 1.775)
 shape = SubResource("RectangleShape2D_jn16b")
 
 [node name="AutodestructionComponent" parent="." instance=ExtResource("3_8occs")]
+delay = 5.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_msovg")]
 
 [node name="CollisionDamageComponent" parent="." instance=ExtResource("6_w4yt1")]
+
+[node name="RangeAttackComponent" parent="." node_paths=PackedStringArray("projectile_spawn_location") instance=ExtResource("7_gj3y3")]
+projectile_to_fire = ExtResource("8_56i32")
+projectile_spawn_location = NodePath("ProjectileSpawnLocation")
+
+[node name="ProjectileSpawnLocation" type="Node2D" parent="RangeAttackComponent"]
+position = Vector2(26, 0)
