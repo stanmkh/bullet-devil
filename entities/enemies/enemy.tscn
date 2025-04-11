@@ -28,11 +28,6 @@ collision_damage_factory = SubResource("Resource_w4yt1")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_pv5y5")
 
-[node name="Sprite" type="Sprite2D" parent="Sprite"]
-position = Vector2(130, -1.52588e-05)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_pv5y5")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
 scale = Vector2(1.775, 1.775)
