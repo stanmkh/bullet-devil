@@ -43,6 +43,7 @@ delay = 5.0
 [node name="RangeAttackComponent" parent="." node_paths=PackedStringArray("projectile_spawn_location") instance=ExtResource("7_gj3y3")]
 projectile_to_fire = ExtResource("8_56i32")
 projectile_spawn_location = NodePath("ProjectileSpawnLocation")
+spread_angle = 5.0
 
 [node name="ProjectileSpawnLocation" type="Node2D" parent="RangeAttackComponent"]
 position = Vector2(26, 0)

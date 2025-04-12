@@ -4,14 +4,17 @@ extends Node2D
 @export var fire_rate = 1000.0
 @export var projectile_to_fire: PackedScene
 @export var projectile_spawn_location: Node2D
+@export var spread_angle = 0.0
 
 var _last_fire_timestampt = 0.0
 var projectile_fired: Signal
 var parent: Node2D
+var spread_angle_rad
 
 func _ready() -> void:
 	parent = get_parent()
 	projectile_fired = parent.projectile_fired
+	spread_angle_rad = deg_to_rad(spread_angle)
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings:PackedStringArray = []
@@ -27,6 +30,7 @@ func _process(_delta: float) -> void:
 
 func fire():
 	var projectile: Node2D = projectile_to_fire.instantiate()
-	projectile.rotation = parent.rotation
+	print(spread_angle_rad)
+	projectile.rotation = parent.rotation + randf_range(-spread_angle_rad, spread_angle_rad)
 	projectile.global_position = projectile_spawn_location.global_position
 	projectile_fired.emit(projectile)
