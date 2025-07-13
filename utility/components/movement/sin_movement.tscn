@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4jakq7j8cg2p"]
+
+[ext_resource type="Script" uid="uid://bepi5bdl8oi8w" path="res://utility/components/movement/sin_movement.gd" id="1_egjwc"]
+
+[node name="SinMovement" type="Node"]
+script = ExtResource("1_egjwc")

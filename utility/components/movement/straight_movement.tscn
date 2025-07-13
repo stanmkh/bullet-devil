@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ewc7mx7h5uf"]
+
+[ext_resource type="Script" uid="uid://dmrnt25qk30p0" path="res://utility/components/movement/straight_movement.gd" id="1_26r5m"]
+
+[node name="StraightMovement" type="Node"]
+script = ExtResource("1_26r5m")

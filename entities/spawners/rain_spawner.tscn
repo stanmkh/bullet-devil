@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfau605u4rue"]
+[gd_scene load_steps=4 format=3 uid="uid://bfau605u4rue"]
 
 [ext_resource type="Script" uid="uid://b0lpda18ceb6r" path="res://entities/spawners/rain_spawner.gd" id="1_hi1ot"]
 [ext_resource type="PackedScene" uid="uid://qvkl1v8tjdhs" path="res://entities/enemies/enemy.tscn" id="2_xgxmd"]
+[ext_resource type="PackedScene" uid="uid://4jakq7j8cg2p" path="res://utility/components/movement/sin_movement.tscn" id="3_sdvmp"]
 
 [node name="RainSpawner" type="Node2D"]
 script = ExtResource("1_hi1ot")
 enemy_to_spawn = ExtResource("2_xgxmd")
+movement_to_assign = ExtResource("3_sdvmp")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

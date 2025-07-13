@@ -20,7 +20,6 @@ metadata/_custom_type_script = "uid://cymnxrufahiv5"
 collision_layer = 8
 collision_mask = 22
 script = ExtResource("1_4xsxa")
-speed = 300.0
 health_component = NodePath("HealthComponent")
 collision_damage_factory = SubResource("Resource_w4yt1")
 
@@ -34,7 +33,7 @@ scale = Vector2(1.775, 1.775)
 shape = SubResource("RectangleShape2D_jn16b")
 
 [node name="AutodestructionComponent" parent="." instance=ExtResource("3_8occs")]
-delay = 5.0
+delay = 10.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_msovg")]
 

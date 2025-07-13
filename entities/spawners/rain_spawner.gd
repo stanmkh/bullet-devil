@@ -7,6 +7,7 @@ extends Node2D
 @export var debug_color: Color = Color.RED
 @export var enemy_to_spawn: PackedScene
 @export var projectile_container: Node
+@export var movement_to_assign: PackedScene
 
 var fill_color: Color = Color(debug_color.r, debug_color.g, debug_color.b, 0.5)
 
@@ -24,3 +25,4 @@ func spawn_enemy():
 	enemy_instance.rotation = PI / 2
 	add_child(enemy_instance)
 	enemy_instance.connect("projectile_fired", projectile_container._on_enemy_projectile_fired)
+	enemy_instance.add_child(movement_to_assign.instantiate())
